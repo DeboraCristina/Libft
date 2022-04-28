@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 18:33:54 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/09 18:33:56 by desilva          ###   ########.fr       */
+/*   Updated: 2022/04/27 16:38:15 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_bzero(void *s, size_t n)
 
 	str = (char *) s;
 	c = 0;
-	while (*str && c++ < n)
+	while (c++ < n)
 		*str++ = '\0';
 }
