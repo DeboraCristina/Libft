@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/09 15:16:05 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/18 07:19:05 by desilva          ###   ########.fr       */
+/*   Created: 2022/04/27 16:18:28 by desilva           #+#    #+#             */
+/*   Updated: 2022/04/27 16:18:30 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	cont = 0;
 	str = (char *) s;
-	while (*str && cont++ < n)
+	while (cont++ < n)
 		*str++ = c;
 	return (s);
 }
