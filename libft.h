@@ -6,7 +6,7 @@
 /*   By: desilva <deboracristinaproficional1@gma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 19:20:32 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/28 23:03:49 by desilva          ###   ########.fr       */
+/*   Updated: 2022/04/29 06:03:59 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
+# define MAX_CHAR 127
+# define MIN_CHAR -128
 
 // ctype
 int		ft_isalpha(int c);
