@@ -10,10 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*str;
 
+	if (c >= MAX_CHAR)
+		c = s[0];
 	str = (char *) s;
 	while (*str++)
 		;
