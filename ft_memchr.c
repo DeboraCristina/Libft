@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/09 19:42:17 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/09 19:42:54 by desilva          ###   ########.fr       */
+/*   Created: 2022/05/01 04:53:07 by desilva           #+#    #+#             */
+/*   Updated: 2022/05/01 04:53:32 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*str;
-	size_t	count;
+	unsigned char	*str;
+	size_t			count;
+	unsigned char	l;
 
-	str = (char *) s;
+	str = (unsigned char *) s;
 	count = 0;
-	while (*str && count++ < n)
-		if (c == *str++)
+	l = c;
+	while (count++ < n)
+		if (l == *str++)
 			return ((void *)--str);
 	return ('\0');
 }

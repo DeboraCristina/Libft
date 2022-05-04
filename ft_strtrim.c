@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 04:01:52 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/23 04:01:54 by desilva          ###   ########.fr       */
+/*   Created: 2022/05/01 21:21:30 by desilva           #+#    #+#             */
+/*   Updated: 2022/05/01 21:21:33 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	c = 0;
 	start = 0;
-	len = ft_strlen((char *) s1);
+	len = ft_strlen(s1) - 1;
 	while (strchr(set, s1[start]))
 		start++;
 	while (strchr(set, s1[len]))
 		len--;
+	len += 1;
 	if (len - start <= 0)
-		trim = (char *) malloc(1);
+		return (ft_strdup(""));
 	else
 		trim = (char *) malloc(len - start + 1);
 	if (!trim)
 		return (0);
-	while (start <= len)
+	while (start < len)
 		trim[c++] = s1[start++];
 	trim[c] = 0;
 	return (trim);

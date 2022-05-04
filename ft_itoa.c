@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 21:54:34 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/23 21:54:37 by desilva          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 static int	ft_count_int(int n)
@@ -49,8 +37,9 @@ char	*ft_itoa(int n)
 	}
 	num = (char *) malloc(len + 1);
 	ft_bzero(num, len);
+	ft_takenbr(num, lln, len - 1);
 	if (!num[0])
 		num[0] = '-';
-	ft_takenbr(num, lln, len - 1);
+	num[len] = 0;
 	return (num);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
+/*   By: desilva <deboracristinaproficional1@gma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 22:45:27 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/19 08:47:58 by desilva          ###   ########.fr       */
+/*   Updated: 2022/04/30 23:00:18 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	char	*dup;
 	int		i;
 
-	tam = ft_strlen((char *) s);
+	tam = ft_strlen(s) + 1;
 	dup = (char *) malloc(tam * sizeof(char));
 	if (!dup)
 		return (0);

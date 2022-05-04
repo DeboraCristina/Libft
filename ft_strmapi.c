@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 22:56:36 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/23 22:56:38 by desilva          ###   ########.fr       */
+/*   Created: 2022/05/01 06:55:17 by desilva           #+#    #+#             */
+/*   Updated: 2022/05/01 06:55:19 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	c = 0;
 	len = ft_strlen((char *) s);
-	map = (char *) malloc(len);
+	map = (char *) malloc(len + 1);
 	if (!map)
 		return (0);
 	while (c < len)
