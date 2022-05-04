@@ -14,18 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int				i;
+	unsigned char	l;
 
 	i = 0;
-	if (c >= MAX_CHAR)
-		c = s[i];
+	l = c;
 	while (s[i])
 	{
-		if (c == s[i])
+		if (l == s[i])
 			return ((char *) s + i);
 		i++;
 	}
-	if (!c)
+	if (!l)
 		return ((char *) s + i);
 	return ('\0');
 }

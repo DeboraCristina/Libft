@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/07 05:06:42 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/07 20:59:59 by desilva          ###   ########.fr       */
+/*   Created: 2022/05/01 06:18:56 by desilva           #+#    #+#             */
+/*   Updated: 2022/05/01 06:18:58 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t limit)
 	while ((s1[count] || s2[count]) && count < limit)
 	{
 		if (s1[count] != s2[count])
-			return (s1[count] - s2[count]);
+			return ((unsigned char) s1[count] - (unsigned char) s2[count]);
 		++count;
 	}
 	return (0);

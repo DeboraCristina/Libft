@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/09 00:35:14 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/09 00:46:40 by desilva          ###   ########.fr       */
+/*   Created: 2022/05/01 03:37:49 by desilva           #+#    #+#             */
+/*   Updated: 2022/05/01 03:38:10 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*str;
+	unsigned char	l;
+	char			*str;
+	size_t			tam;
 
-	if (c >= MAX_CHAR)
-		c = s[0];
+	l = c;
 	str = (char *) s;
-	while (*str++)
-		;
-	while (*str-- != s[0])
-		if (c == *str)
-			return (str);
+	tam = ft_strlen(s);
+	while (tam)
+	{
+		if (str[tam] == l)
+			return ((char *) s + tam);
+		tam--;
+	}
+	if (str[0] == l)
+		return ((char *) s + tam);
 	return ('\0');
 }

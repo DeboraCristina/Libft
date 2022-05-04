@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
+/*   By: desilva <deboracristinaproficional1@gma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 23:49:17 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/19 23:49:19 by desilva          ###   ########.fr       */
+/*   Updated: 2022/04/30 02:25:47 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,20 @@
 
 char	*ft_strnstr(const char *b, const char *l, size_t s)
 {
-	char	*big;
-	char	*little;
-	int		counters[3];
+	size_t	ib;
+	size_t	il;
 
-	big = (char *) b;
-	little = (char *) l;
-	counters[0] = 0;
-	counters[1] = 0;
-	counters[2] = -1;
-	while (big[counters[0]] && counters[0] <= (int) s)
+	if (!*l)
+		return ((char *) b);
+	ib = 0;
+	while (b[ib] && ib < s)
 	{
-		if (!little[counters[1]])
-			return (big + counters[2]);
-		if (counters[2] == -1 && big[counters[0]] == little[0])
-			counters[2] = counters[0];
-		if (big[counters[0]] != little[counters[1]])
-		{
-			counters[1] = 0;
-			counters[2] = 0;
-		}
-		counters[0]++;
-		if (counters[2] != -1)
-			counters[1]++;
-	}
-	return ('\0');
+		il = 0;
+		while (b[ib + il] == l[il] && l[il] && (ib + il) < s)
+			il++;
+		if (!l[il])
+			return ((char *) b + ib);
+		ib++;
+	}	
+	return (0);
 }
