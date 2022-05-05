@@ -6,86 +6,70 @@
 #include <stdio.h>
 #endif
 
-static int	ft_cdel(const char *str, char del)
+static int	ft_cword(const char *str, char del)
 {
 	int	c;
 	int	i;
+	int	status;
 
 	c = 0;
 	i = 0;
+	status = 0;
 	while (str[i])
 	{
-		if (str[i] == del)
+		if (status == 0 && str[i] != del)
+		{
 			c++;
+			status = 1;
+		}
+		else if (str[i] == del)
+			status = 0;
 		i++;
 	}
 	return (c);
 }
 
-static int	*ft_strnlen(const char *str, char del, int n)
+static void	ft_strnlen(const char *str, int start, char del, int *pos)
 {
-	int	start;
 	int	end;
-	int	*pos;
 
-	pos = (int *) malloc(2 * sizeof(int));
-	start = 0;
 	end = 0;
-	while (n)
-	{
-		while (str[start] && str[start] != del)
-			start++;
+	while (str[start] && str[start] == del) // começo da primeira palavra
 		start++;
-		end = start;
-		n--;
+	printf("%c\n", str[start]);
+	end = start;
+	while (str[end])
+	{
+		if (str[end + 1] == 0 || str[end + 1] == del)
+			break ;
+		end++;
 	}
-	while (str[end] && str[end] != del)
-		end++;
-	if (!str[end])
-		end++;
 	pos[0] = start;
 	pos[1] = end;
-	return (pos);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	int		ndel;
-#if DEBUG == 0
 	int		pos[2];
-#endif
-#if DEBUG == 1
-	int		*pos;
-#endif
-	int		size;
+	int		i;
 	char	**result;
 
-	ndel = ft_cdel(s, c) + 1;
-	result = (char **) malloc(ndel * sizeof(char *));
-	printf("AKI\n");
+	ndel = ft_cword(s, c);
+	pos[0] = 0;
+	pos[1] = -1;
+	i = 0;
+	printf("%d\n", ndel);
+	result = (char **) malloc((ndel + 1) * sizeof(char *));
 	if (!result)
 		return (0);
-	result[ndel] = "\0";
-	ndel--;
-	while (ndel >= 0)
+	result[ndel] = 0; // rs[2]
+	while (i < ndel)
 	{
-#if DEBUG == 1
-		pos = ft_strnlen(s, c, ndel);
-#endif
-#if DEBUG == 0
-		pos[0] = ft_strnlen(s, c, ndel)[0];
-		pos[1] = ft_strnlen(s, c, ndel)[1];
-#endif
+		ft_strnlen(s, pos[1] + 1, c, pos);
 		printf("p0 = %d | p1 = %d\n", pos[0], pos[1]);
-		size = pos[1] - pos[0] + 1;
-		result[ndel] = (char *) malloc(size * sizeof(char));
-		if (!result[ndel])
-			return (0);
-		result[ndel] = ft_substr(s, pos[0], pos[1] - pos[0]);
-		--ndel;
+		result[i] = ft_substr(s, pos[0], pos[1] - pos[0] + 1);
+		i++;
 	}
-#if DEBUG == 1
-	free(pos);
-#endif
 	return (result);
 }
