@@ -25,11 +25,11 @@ RM		=	rm -f
 
 .c.o:
 	@$(CC) $(FLAGS) -c $< -o $@
-	@echo "\033[92m$<\033[0m"
+	@echo "\033[1;96m$<	Compiled\033[0m"
 
 $(NAME):	$(OBJS) $(HEADER)
 	@ar rc $(NAME) $(OBJS)
-	@echo "\033[92m\n========================================\n"
+	@echo "\033[1;92m\n========================================\n"
 	@echo "Lib		successfully created"
 	@echo "\n========================================\n\033[0m"
 
@@ -40,7 +40,7 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "\33[92mlibft  successfully removed\33[0m"
+	@echo "\33[1;93mlibft  successfully removed\33[0m"
 
 re:	fclean all
 
