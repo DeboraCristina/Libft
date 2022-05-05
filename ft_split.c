@@ -1,10 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/05 23:35:39 by desilva           #+#    #+#             */
+/*   Updated: 2022/05/05 23:35:41 by desilva          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-#define DEBUG 1
-
-#if DEBUG == 1
-#include <stdio.h>
-#endif
 
 static int	ft_cword(const char *str, char del)
 {
@@ -34,9 +40,8 @@ static void	ft_strnlen(const char *str, int start, char del, int *pos)
 	int	end;
 
 	end = 0;
-	while (str[start] && str[start] == del) // começo da primeira palavra
+	while (str[start] && str[start] == del)
 		start++;
-	printf("%c\n", str[start]);
 	end = start;
 	while (str[end])
 	{
@@ -59,15 +64,13 @@ char	**ft_split(char const *s, char c)
 	pos[0] = 0;
 	pos[1] = -1;
 	i = 0;
-	printf("%d\n", ndel);
 	result = (char **) malloc((ndel + 1) * sizeof(char *));
 	if (!result)
 		return (0);
-	result[ndel] = 0; // rs[2]
+	result[ndel] = 0;
 	while (i < ndel)
 	{
 		ft_strnlen(s, pos[1] + 1, c, pos);
-		printf("p0 = %d | p1 = %d\n", pos[0], pos[1]);
 		result[i] = ft_substr(s, pos[0], pos[1] - pos[0] + 1);
 		i++;
 	}
