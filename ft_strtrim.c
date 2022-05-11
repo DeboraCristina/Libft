@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 21:21:30 by desilva           #+#    #+#             */
-/*   Updated: 2022/05/01 21:21:33 by desilva          ###   ########.fr       */
+/*   Updated: 2022/05/10 15:18:14 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	c = 0;
 	start = 0;
 	len = ft_strlen(s1) - 1;
-	while (strchr(set, s1[start]))
+	while (ft_strchr(set, s1[start]))
 		start++;
-	while (strchr(set, s1[len]))
+	while (ft_strchr(set, s1[len]))
 		len--;
 	len += 1;
 	if (len - start <= 0)
