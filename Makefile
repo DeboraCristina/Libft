@@ -25,13 +25,10 @@ RM		=	rm -f
 
 .c.o:
 	@$(CC) $(FLAGS) -c $< -o $@
-	@echo "\033[1;96m$<	Compiled\033[0m"
 
 $(NAME):	$(OBJS) $(HEADER)
 	@ar rc $(NAME) $(OBJS)
-	@echo "\033[1;92m\n========================================\n"
-	@echo "Lib		successfully created"
-	@echo "\n========================================\n\033[0m"
+	@echo "\033[1;92mLib		successfully created\033[0m"
 
 all:	$(NAME)
 
