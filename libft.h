@@ -6,7 +6,7 @@
 /*   By: desilva <deboracristinaproficional1@gma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 19:20:32 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/30 22:08:41 by desilva          ###   ########.fr       */
+/*   Updated: 2022/05/10 15:15:56 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <bsd/string.h>
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
