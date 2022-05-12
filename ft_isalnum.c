@@ -6,13 +6,11 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:58:25 by desilva           #+#    #+#             */
-/*   Updated: 2022/04/07 21:05:58 by desilva          ###   ########.fr       */
+/*   Updated: 2022/05/12 14:08:38 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c);
-
-int	ft_isdigit(int c);
+# include "libft.h"
 
 int	ft_isalnum(int c)
 {
