@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/01 03:35:03 by desilva           #+#    #+#             */
-/*   Updated: 2022/05/01 03:37:23 by desilva          ###   ########.fr       */
+/*   Created: 2022/05/12 13:38:02 by desilva           #+#    #+#             */
+/*   Updated: 2022/05/12 13:38:04 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*res;
-	int		total;
+	size_t	total;
 
 	total = nmemb * size;
-	if (size > MAX_INT || nmemb > MAX_INT)
+	if ((total / nmemb) != size)
 		return (0);
-	if (total == -1 || nmemb == 0 || size == 0)
-		return (0);
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
 	res = malloc(nmemb * size);
 	if (!res)
 		return (0);
