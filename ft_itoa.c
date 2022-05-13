@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:30:41 by desilva           #+#    #+#             */
-/*   Updated: 2022/05/05 23:30:43 by desilva          ###   ########.fr       */
+/*   Updated: 2022/05/13 12:52:08 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ char	*ft_itoa(int n)
 		len++;
 	}
 	num = (char *) malloc(len + 1);
+	if (!num)
+		return (0);
 	ft_bzero(num, len);
 	ft_takenbr(num, lln, len - 1);
 	if (!num[0])
