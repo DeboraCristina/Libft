@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 03:37:49 by desilva           #+#    #+#             */
-/*   Updated: 2022/05/01 03:38:10 by desilva          ###   ########.fr       */
+/*   Updated: 2022/05/15 20:50:31 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (str[0] == l)
 		return ((char *) s + tam);
-	return ('\0');
+	return (0);
 }

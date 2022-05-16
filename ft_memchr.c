@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 04:53:07 by desilva           #+#    #+#             */
-/*   Updated: 2022/05/01 04:53:32 by desilva          ###   ########.fr       */
+/*   Updated: 2022/05/15 20:50:08 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (count++ < n)
 		if (l == *str++)
 			return ((void *)--str);
-	return ('\0');
+	return (0);
 }
