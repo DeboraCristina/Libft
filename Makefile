@@ -17,7 +17,7 @@ NAME	=	libft.a
 
 HEADER	=	libft.h
 
-CC		=	gcc
+CC		=	cc
 
 FLAGS	=	-Wall -Werror -Wextra
 
