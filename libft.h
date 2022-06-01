@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: desilva <deboracristinaproficional1@gma    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/17 19:20:32 by desilva           #+#    #+#             */
-/*   Updated: 2022/05/10 15:15:56 by desilva          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -20,6 +8,12 @@
 # define MIN_INT -2147483648
 # define MAX_CHAR 127
 # define MIN_CHAR -128
+
+typedef struct	s_list
+{
+	void	*content;
+	struct	*next;
+}	t_list;
 
 // ctype
 int		ft_isalpha(int c);
