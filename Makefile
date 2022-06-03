@@ -11,9 +11,17 @@ SRCS	=	ft_atoi.c		ft_bzero.c		ft_calloc.c		\
 			ft_strtrim.c	ft_itoa.c	ft_strmapi.c		\
 			ft_striteri.c
 
+SRCS_B	=	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c	\
+			ft_lstlast.c	ft_lstadd_back.c	ft_lstdelone.c	\
+			ft_lstclear.c	ft_lstiter.c		ft_lstmap.c
+
 OBJS	=	$(SRCS:%.c=%.o)
 
+OBJS_B	=	$(SRCS_B:%.c=%.o)
+
 NAME	=	libft.a
+
+NAME_B	=	libft_bonus.a
 
 HEADER	=	libft.h
 
@@ -23,22 +31,30 @@ FLAGS	=	-Wall -Werror -Wextra
 
 RM		=	rm -f
 
-.c.o:
-	@$(CC) $(FLAGS) -c $< -o $@
+%.c%.o:
+	@@(CC) $(FLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS) $(HEADER)
-	@ar rc $(NAME) $(OBJS)
+	@ar -rc $(NAME) $(OBJS)
 	@echo "\033[1;92mLib		successfully created\033[0m"
+
+$(NAME_B):	$(OBJS) $(OBJS_B) $(HEADER)
+	@ar -rc $(NAME) $(OBJS) $(OBJS_B)
+	@echo "\033[1;92mLib with bonus		successfully created\033[0m"
 
 all:	$(NAME)
 
+bonus:	$(NAME_B)
+
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(OBJS_B)
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) $(NAME_B)
 	@echo "\33[1;93mlibft  successfully removed\33[0m"
 
 re:	fclean all
 
-.PHONY: all clean fclean re
+re_b:	fclean bonus
+
+.PHONY: all clean fclean re bonus
