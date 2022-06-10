@@ -26,6 +26,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 int		ft_lstsize(t_list *lst);
 
+// my little monsters
+int	ft_count_digits(int n);
+char	*ft_tohex(int n, int type);
+void	ft_rev_int_tab(void *tab, int size);
+
 // ctype
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
