@@ -6,26 +6,11 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:30:41 by desilva           #+#    #+#             */
-/*   Updated: 2022/05/13 12:52:08 by desilva          ###   ########.fr       */
+/*   Updated: 2022/06/09 19:04:34 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_count_int(int n)
-{
-	int	c;
-
-	c = 0;
-	if (n == 0)
-		return (1);
-	while (n != 0)
-	{
-		n /= 10;
-		c++;
-	}
-	return (c);
-}
 
 static void	ft_takenbr(char	*dest, long long int n, int index)
 {
@@ -41,7 +26,7 @@ char	*ft_itoa(int n)
 	char			*num;
 
 	lln = n;
-	len = ft_count_int(lln);
+	len = ft_count_digits(lln);
 	if (lln < 0)
 	{
 		lln *= -1;
