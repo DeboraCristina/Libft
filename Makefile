@@ -15,9 +15,13 @@ SRCS_B	=	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c	\
 			ft_lstlast.c	ft_lstadd_back.c	ft_lstdelone.c	\
 			ft_lstclear.c	ft_lstiter.c		ft_lstmap.c
 
+SRCS_M	=	ft_count_digits.c	ft_tohex.c	ft_rev_int_tab.c
+
 OBJS	=	$(SRCS:%.c=%.o)
 
 OBJS_B	=	$(SRCS_B:%.c=%.o)
+
+OBJS_M	=	$(SRCS_M:%.c=%.o)
 
 NAME	=	libft.a
 
@@ -32,14 +36,14 @@ FLAGS	=	-Wall -Werror -Wextra
 RM		=	rm -f
 
 %.c%.o:
-	@@(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME):	$(OBJS) $(HEADER)
-	@ar -rc $(NAME) $(OBJS)
+$(NAME):	$(OBJS) $(OBJS_M) $(HEADER)
+	@ar -rc $(NAME) $(OBJS) $(OBJS_M)
 	@echo "\033[1;92mLib		successfully created\033[0m"
 
-$(NAME_B):	$(OBJS) $(OBJS_B) $(HEADER)
-	@ar -rc $(NAME) $(OBJS) $(OBJS_B)
+$(NAME_B):	$(OBJS) $(OBJS_B) $(OBJS_M) $(HEADER)
+	@ar -rc $(NAME) $(OBJS) $(OBJS_B) $(OBJS_M)
 	@echo "\033[1;92mLib with bonus		successfully created\033[0m"
 
 all:	$(NAME)
@@ -47,7 +51,7 @@ all:	$(NAME)
 bonus:	$(NAME_B)
 
 clean:
-	@$(RM) $(OBJS) $(OBJS_B)
+	@$(RM) $(OBJS) $(OBJS_B) $(OBJS_M)
 
 fclean: clean
 	@$(RM) $(NAME) $(NAME_B)
@@ -58,3 +62,5 @@ re:	fclean all
 re_b:	fclean bonus
 
 .PHONY: all clean fclean re bonus
+
+.SILENT:	$(OBJS)	$(OBJS_B)	$(OBJS_M)
