@@ -35,7 +35,7 @@ FLAGS	=	-Wall -Werror -Wextra
 
 RM		=	rm -f
 
-%.c%.o:
+%.o:	%.c
 	@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS) $(OBJS_M) $(HEADER)
@@ -62,5 +62,3 @@ re:	fclean all
 re_b:	fclean bonus
 
 .PHONY: all clean fclean re bonus
-
-.SILENT:	$(OBJS)	$(OBJS_B)	$(OBJS_M)
