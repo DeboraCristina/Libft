@@ -6,13 +6,13 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:29:35 by desilva           #+#    #+#             */
-/*   Updated: 2022/06/13 14:29:37 by desilva          ###   ########.fr       */
+/*   Updated: 2022/06/13 17:35:18 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_nbr2hex(size_t i, int type, char *dest)
+static void	ft_nbr2hex(unsigned long int i, int type, char *dest)
 {
 	char	n;
 
@@ -29,7 +29,7 @@ static void	ft_nbr2hex(size_t i, int type, char *dest)
 	dest[1] = '\0';
 }
 
-char	*ft_tohex(size_t n, int type)
+char	*ft_tohex(unsigned long int n, int type)
 {
 	char	*hex;
 	char	*temp;

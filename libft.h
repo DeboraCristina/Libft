@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 23:10:17 by desilva           #+#    #+#             */
-/*   Updated: 2022/06/13 14:29:51 by desilva          ###   ########.fr       */
+/*   Updated: 2022/06/13 17:35:38 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_lstsize(t_list *lst);
 size_t	ft_count_digits(size_t n);
 int		ft_isupper(int c);
 int		ft_islower(int c);
-char	*ft_tohex(size_t n, int type);
+char	*ft_tohex(unsigned long int n, int type);
 char	*ft_utoa(unsigned int u);
 void	ft_rev_int_tab(void *tab, int size);
 
