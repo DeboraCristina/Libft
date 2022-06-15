@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:29:35 by desilva           #+#    #+#             */
-/*   Updated: 2022/06/13 17:35:18 by desilva          ###   ########.fr       */
+/*   Updated: 2022/06/15 11:11:08 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ char	*ft_tohex(unsigned long int n, int type)
 			return (NULL);
 		n = n / 16;
 	}
-	ft_rev_int_tab(hex, ft_strlen(hex));
+	ft_rev_tab(hex, ft_strlen(hex));
 	return (hex);
 }
