@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tohex.c                                         :+:      :+:    :+:   */
+/*   ft_u2hex.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:29:35 by desilva           #+#    #+#             */
-/*   Updated: 2022/06/15 11:11:08 by desilva          ###   ########.fr       */
+/*   Updated: 2022/06/15 20:26:19 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	ft_nbr2hex(unsigned long int i, int type, char *dest)
 	dest[1] = '\0';
 }
 
-char	*ft_tohex(unsigned long int n, int type)
+char	*ft_u2hex(unsigned int n, int type)
 {
 	char	*hex;
 	char	*temp;
