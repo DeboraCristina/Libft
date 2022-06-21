@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 23:10:17 by desilva           #+#    #+#             */
-/*   Updated: 2022/06/15 18:25:52 by desilva          ###   ########.fr       */
+/*   Updated: 2022/06/21 15:32:15 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,12 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-// my little monsters
+// Gnl
+char	*get_next_line(int fd);
+
+// Printf
+
+// extra functions
 int		ft_isupper(int c);
 int		ft_islower(int c);
 char	*ft_lu2hex(unsigned long int n, int type);
