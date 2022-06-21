@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 23:10:17 by desilva           #+#    #+#             */
-/*   Updated: 2022/06/21 15:32:15 by desilva          ###   ########.fr       */
+/*   Updated: 2022/06/21 15:55:59 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_list
 char	*get_next_line(int fd);
 
 // Printf
+# include "ft_printf/ft_printf.h"
 
 // extra functions
 int		ft_isupper(int c);
