@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 23:10:17 by desilva           #+#    #+#             */
-/*   Updated: 2022/06/21 15:55:59 by desilva          ###   ########.fr       */
+/*   Updated: 2022/06/21 16:09:37 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+// Printf
+# include "ft_printf/ft_printf.h"
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
@@ -30,9 +32,6 @@ typedef struct s_list
 // Gnl
 char	*get_next_line(int fd);
 
-// Printf
-# include "ft_printf/ft_printf.h"
-
 // extra functions
 int		ft_isupper(int c);
 int		ft_islower(int c);
@@ -44,7 +43,6 @@ void	ft_rev_tab(void *t, int size);
 // bonus ,-,
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
