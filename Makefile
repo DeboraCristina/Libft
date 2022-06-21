@@ -19,6 +19,10 @@ SRCS_M	=	ft_isupper.c		ft_rev_tab.c	\
 			ft_utoa.c			ft_islower.c	\
 			ft_u2hex.c			ft_lu2hex.c		\
 
+NAME_PRINTF	=	libftprintf.a
+
+LOCAL_PRINTF	=	ft_printf/
+
 OBJS	=	$(SRCS:%.c=%.o)
 
 OBJS_B	=	$(SRCS_B:%.c=%.o)
@@ -40,22 +44,29 @@ RM		=	rm -f
 %.o:	%.c
 	@$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME):	$(OBJS) $(OBJS_M) $(HEADER)
+$(NAME):	$(OBJS) $(OBJS_M) $(HEADER) $(NAME_PRINTF)
+	@mv $(LOCAL_PRINTF)$(NAME_PRINTF) $(NAME)
 	@ar -rc $(NAME) $(OBJS) $(OBJS_M)
 	@echo "\033[1;92mLib		successfully created\033[0m"
 
-$(NAME_B):	$(OBJS) $(OBJS_B) $(OBJS_M) $(HEADER)
+$(NAME_B):	$(OBJS) $(OBJS_B) $(OBJS_M) $(HEADER) $(NAME_PRINTF)
+	@mv $(LOCAL_PRINTF)$(NAME_PRINTF) $(NAME)
 	@ar -rc $(NAME) $(OBJS) $(OBJS_B) $(OBJS_M)
 	@echo "\033[1;92mLib with bonus		successfully created\033[0m"
+
+$(NAME_PRINTF):
+	@make --no-print-directory -C $(LOCAL_PRINTF)
 
 all:	$(NAME)
 
 bonus:	$(NAME_B)
 
 clean:
+	@make --no-print-directory clean -C $(LOCAL_PRINTF)
 	@$(RM) $(OBJS) $(OBJS_B) $(OBJS_M)
 
 fclean: clean
+	@make --no-print-directory fclean -C $(LOCAL_PRINTF)
 	@$(RM) $(NAME) $(NAME_B)
 	@echo "\33[1;93mlibft  successfully removed\33[0m"
 
