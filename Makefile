@@ -50,8 +50,8 @@ $(NAME):	$(OBJS) $(OBJS_M) $(HEADER) $(NAME_PRINTF)
 	@echo "\033[1;92mLib		successfully created\033[0m"
 
 $(NAME_B):	$(OBJS) $(OBJS_B) $(OBJS_M) $(HEADER) $(NAME_PRINTF)
-	@mv $(LOCAL_PRINTF)$(NAME_PRINTF) $(NAME)
-	@ar -rc $(NAME) $(OBJS) $(OBJS_B) $(OBJS_M)
+	@mv $(LOCAL_PRINTF)$(NAME_PRINTF) $(NAME_B)
+	@ar -rc $(NAME_B) $(OBJS) $(OBJS_B) $(OBJS_M)
 	@echo "\033[1;92mLib with bonus		successfully created\033[0m"
 
 $(NAME_PRINTF):
