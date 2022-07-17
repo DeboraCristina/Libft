@@ -18,6 +18,7 @@ SRCS_B	=	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c	\
 SRCS_M	=	ft_isupper.c		ft_rev_tab.c	\
 			ft_utoa.c			ft_islower.c	\
 			ft_u2hex.c			ft_lu2hex.c		\
+			ft_strcmp.c
 
 NAME_PRINTF	=	libftprintf.a
 

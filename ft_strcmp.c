@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_tab.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 05:03:26 by desilva           #+#    #+#             */
-/*   Updated: 2022/07/17 16:09:12 by desilva          ###   ########.fr       */
+/*   Created: 2022/02/14 13:59:10 by desilva           #+#    #+#             */
+/*   Updated: 2022/07/17 16:08:56 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_rev_tab(void *t, int size)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int		in;
-	int		tam;
-	char	res;
-	char	*tab;
+	int	cont;
 
-	in = 0;
-	tam = size - 1;
-	tab = (char *) t;
-	while (in < tam)
+	cont = 0;
+	while (s1[cont] || s2[cont])
 	{
-		res = tab[in];
-		tab[in] = tab[tam];
-		tab[tam] = res;
-		tam--;
-		in++;
+		if (s1[cont] != s2[cont])
+		{
+			return (s1[cont] - s2[cont]);
+		}
+		++cont;
 	}
+	return (0);
 }
