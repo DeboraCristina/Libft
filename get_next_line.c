@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:23:26 by desilva           #+#    #+#             */
-/*   Updated: 2022/06/21 15:32:41 by desilva          ###   ########.fr       */
+/*   Updated: 2022/07/18 11:29:26 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ char	*ft_complete_line(char *oldline, char *content)
 	return (newline);
 }
 
-char	*get_next_line(int fd)
+//char	*get_next_line(int fd)
+char	*gnl(int fd)
 {
 	char		*line;
 	char		*content;
