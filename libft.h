@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 23:10:17 by desilva           #+#    #+#             */
-/*   Updated: 2022/06/21 16:09:37 by desilva          ###   ########.fr       */
+/*   Updated: 2022/07/18 11:34:57 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define MIN_INT -2147483648
 # define MAX_CHAR 127
 # define MIN_CHAR -128
+# define BUFFER_SIZE 42
 
 typedef struct s_list
 {
@@ -30,7 +31,7 @@ typedef struct s_list
 }	t_list;
 
 // Gnl
-char	*get_next_line(int fd);
+char	*gnl(int fd);
 
 // extra functions
 int		ft_isupper(int c);
