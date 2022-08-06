@@ -6,7 +6,7 @@
 /*   By: desilva <dede-2231@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 23:10:17 by desilva           #+#    #+#             */
-/*   Updated: 2022/07/18 11:34:57 by desilva          ###   ########.fr       */
+/*   Updated: 2022/08/06 16:44:47 by desilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char	*ft_lu2hex(unsigned long int n, int type);
 char	*ft_u2hex(unsigned int n, int type);
 char	*ft_utoa(unsigned int u);
 void	ft_rev_tab(void *t, int size);
+void	ft_swap_int(int *a, int *b);
 
 // bonus ,-,
 t_list	*ft_lstnew(void *content);
